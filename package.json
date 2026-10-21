@@ -1,0 +1,46 @@
+{
+  "name": "pizzacut",
+  "version": "1.0.0",
+  "private": true,
+  "description": "PizzaCut — all-in-one pizza ordering and delivery application (storefront, admin dashboard and rider portal in one deployable app).",
+  "scripts": {
+    "dev": "next dev -H 0.0.0.0 -p 3000",
+    "build": "next build",
+    "start": "next start -H 0.0.0.0 -p 3000",
+    "typecheck": "tsc --noEmit",
+    "lint": "next lint",
+    "db:server": "node --enable-source-maps scripts/local-db-server.mjs",
+    "db:migrate": "node scripts/migrate.mjs",
+    "db:seed": "node scripts/seed.mjs",
+    "db:reset": "node scripts/reset-local-db.mjs",
+    "db:setup": "node scripts/migrate.mjs && node scripts/seed.mjs",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "verify": "npm run typecheck && npm run test && npm run build"
+  },
+  "dependencies": {
+    "drizzle-orm": "^0.44.2",
+    "leaflet": "^1.9.4",
+    "next": "^15.5.4",
+    "postgres": "^3.4.7",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "0.5.10",
+    "@electric-sql/pglite-socket": "^0.2.13",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/leaflet": "^1.9.20",
+    "@types/node": "^24.0.14",
+    "@types/react": "^19.1.9",
+    "@types/react-dom": "^19.1.7",
+    "drizzle-kit": "^0.31.4",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  }
+}
